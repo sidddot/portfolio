@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101716" />
+  <meta name="description" content="Sidharth N — Software Engineer and AI Engineer building intelligent applications, backend systems and reliable engineering platforms." />
+  <title>Sidharth N | Software Engineer & AI Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#101716',
+            panel: '#17211F',
+            panel2: '#1D2926',
+            bordo: '#6C151E',
+            green: '#0F3D3A',
+            cream: '#F5DABF',
+            muted: '#A8B5AF',
+            line: 'rgba(245,218,191,.13)'
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            display: ['Manrope', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 20px 70px rgba(0,0,0,.28)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: dark; scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #101716;
+      color: #F5DABF;
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: #6C151E; color: #fff7ee; }
+    .container-width { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { color: #d99a8d; font-size: .73rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .section-heading { font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.15; letter-spacing: -.045em; font-weight: 800; }
+    .gradient-text { background: linear-gradient(100deg, #F5DABF 5%, #d99a8d 55%, #b9d0c3 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .surface { background: linear-gradient(145deg, rgba(29,41,38,.96), rgba(23,33,31,.96)); border: 1px solid rgba(245,218,191,.12); }
+    .nav-link { color: #bdc8c1; font-size: .88rem; transition: color .2s ease; }
+    .nav-link:hover, .nav-link:focus-visible { color: #F5DABF; }
+    .btn-primary { background: #F5DABF; color: #18201d; transition: transform .2s ease, background .2s ease; }
+    .btn-primary:hover { background: #ffe8d2; transform: translateY(-2px); }
+    .btn-secondary { border: 1px solid rgba(245,218,191,.28); color: #F5DABF; transition: background .2s ease, transform .2s ease; }
+    .btn-secondary:hover { background: rgba(245,218,191,.08); transform: translateY(-2px); }
+    .project-card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(245,218,191,.32); box-shadow: 0 20px 55px rgba(0,0,0,.2); }
+    .tag { display: inline-flex; align-items: center; border: 1px solid rgba(245,218,191,.14); background: rgba(245,218,191,.045); color: #d6ded8; border-radius: 999px; padding: .38rem .72rem; font-size: .76rem; }
+    .timeline-line { border-left: 1px solid rgba(245,218,191,.2); }
+    .timeline-dot { position: absolute; left: -5px; top: .35rem; width: 9px; height: 9px; border-radius: 50%; background: #d99a8d; box-shadow: 0 0 0 5px rgba(217,154,141,.12); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .hero-grid {
+      background-image: radial-gradient(circle at 75% 25%, rgba(15,61,58,.55), transparent 32%),
+                        radial-gradient(circle at 15% 75%, rgba(108,21,30,.22), transparent 28%);
+    }
+    .orb { position:absolute; border-radius:9999px; filter:blur(1px); pointer-events:none; }
+    .mobile-menu { display:none; }
+    @media (max-width: 760px) {
+      .container-width { width: min(100% - 36px, 600px); }
+      .desktop-nav { display:none; }
+      .mobile-menu { display:block; }
+      .mobile-links[hidden] { display:none; }
+      .hero-actions a { width:100%; justify-content:center; }
+      .timeline-line { margin-left: .25rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-ink/90 backdrop-blur-xl">
+    <div class="container-width flex h-[72px] items-center justify-between">
+      <a href="#home" class="font-display text-lg font-extrabold tracking-tight" aria-label="Sidharth N home">
+        SN<span class="ml-1 text-[#d99a8d]">.</span>
+      </a>
+
+      <nav class="desktop-nav flex items-center gap-8" aria-label="Main navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a href="mailto:sidharthnarayan04@gmail.com" class="desktop-nav rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-cream transition hover:border-cream/50">Let's talk <span aria-hidden="true">↗</span></a>
+
+      <button id="menuButton" class="mobile-menu rounded-lg border border-white/15 p-2 text-cream" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileLinks">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <nav id="mobileLinks" class="mobile-menu mobile-links border-t border-white/5 px-[18px] py-3" aria-label="Mobile navigation" hidden>
+      <div class="mx-auto flex max-w-[600px] flex-col gap-1">
+        <a class="rounded-lg px-3 py-3 text-sm text-muted hover:bg-white/5 hover:text-cream" href="#about">About</a>
+        <a class="rounded-lg px-3 py-3 text-sm text-muted hover:bg-white/5 hover:text-cream" href="#experience">Experience</a>
+        <a class="rounded-lg px-3 py-3 text-sm text-muted hover:bg-white/5 hover:text-cream" href="#projects">Projects</a>
+        <a class="rounded-lg px-3 py-3 text-sm text-muted hover:bg-white/5 hover:text-cream" href="#skills">Skills</a>
+        <a class="rounded-lg px-3 py-3 text-sm text-muted hover:bg-white/5 hover:text-cream" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero-grid relative isolate overflow-hidden">
+      <div class="orb -right-24 top-20 h-72 w-72 bg-green/30"></div>
+      <div class="orb -left-32 bottom-0 h-72 w-72 bg-bordo/20"></div>
+      <div class="container-width relative grid min-h-[650px] items-center gap-12 py-24 md:grid-cols-[1.3fr_.7fr] md:py-28">
+        <div class="reveal">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-[#b9d0c3]/20 bg-[#0F3D3A]/30 px-4 py-2 text-xs font-semibold tracking-wide text-[#c5d9ce]">
+            <span class="h-2 w-2 rounded-full bg-[#8fc4a8] shadow-[0_0_12px_#8fc4a8]"></span>
+            SOFTWARE ENGINEERING · AI
+          </div>
+          <p class="eyebrow mb-4">Hello, I'm</p>
+          <h1 class="font-display text-5xl font-extrabold leading-[1.04] tracking-[-.06em] sm:text-6xl md:text-7xl">
+            Sidharth<br><span class="gradient-text">N.</span>
+          </h1>
+          <h2 class="mt-6 max-w-2xl font-display text-xl font-semibold leading-snug text-[#e9cdb5] sm:text-2xl">
+            I build intelligent products and dependable software systems.
+          </h2>
+          <p class="mt-5 max-w-xl text-base leading-8 text-muted sm:text-lg">
+            Software Engineer focused on backend development, applied AI and automation. I enjoy turning complex workflows into practical, scalable engineering solutions.
+          </p>
+          <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#projects" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold">Explore my work <span aria-hidden="true">↗</span></a>
+            <a href="https://drive.google.com/file/d/1kHWVBolZO5fqGdDa1iX_WOCJtE6sPelG/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold">Download résumé <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="mt-9 flex items-center gap-5 text-sm text-muted">
+            <a class="transition hover:text-cream" href="https://github.com/sidddot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <span class="h-1 w-1 rounded-full bg-white/30"></span>
+            <a class="transition hover:text-cream" href="https://www.linkedin.com/in/sidharth-n" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <span class="h-1 w-1 rounded-full bg-white/30"></span>
+            <a class="transition hover:text-cream" href="mailto:sidharthnarayan04@gmail.com">Email ↗</a>
+          </div>
+        </div>
+
+        <div class="reveal mx-auto w-full max-w-[350px]">
+          <div class="surface relative rounded-[2rem] p-5 shadow-glow">
+            <div class="absolute -right-3 -top-3 rounded-full border border-[#d99a8d]/30 bg-bordo px-4 py-2 text-xs font-bold tracking-wide text-cream">BUILD · LEARN · SHIP</div>
+            <div class="rounded-[1.5rem] border border-white/10 bg-[#101a18] p-6">
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-[.18em] text-muted">Engineering focus</span>
+                <span class="text-xs text-[#8fc4a8]">● Exploring</span>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <div class="mb-2 flex justify-between text-sm"><span class="font-semibold">Backend systems</span><span class="text-muted">01</span></div>
+                  <div class="h-1.5 overflow-hidden rounded-full bg-white/10"><div class="h-full w-[88%] rounded-full bg-[#8bb6a1]"></div></div>
+                </div>
+                <div>
+                  <div class="mb-2 flex justify-between text-sm"><span class="font-semibold">Applied AI</span><span class="text-muted">02</span></div>
+                  <div class="h-1.5 overflow-hidden rounded-full bg-white/10"><div class="h-full w-[82%] rounded-full bg-[#d99a8d]"></div></div>
+                </div>
+                <div>
+                  <div class="mb-2 flex justify-between text-sm"><span class="font-semibold">Automation & quality</span><span class="text-muted">03</span></div>
+                  <div class="h-1.5 overflow-hidden rounded-full bg-white/10"><div class="h-full w-[86%] rounded-full bg-[#bba4cf]"></div></div>
+                </div>
+              </div>
+              <div class="mt-9 grid grid-cols-2 gap-3">
+                <div class="rounded-xl bg-white/[.045] p-4">
+                  <p class="font-display text-2xl font-extrabold">9.38</p>
+                  <p class="mt-1 text-xs text-muted">Engineering CGPA</p>
+                </div>
+                <div class="rounded-xl bg-white/[.045] p-4">
+                  <p class="font-display text-2xl font-extrabold">2025</p>
+                  <p class="mt-1 text-xs text-muted">Started at Epsilon</p>
+                </div>
+              </div>
+            </div>
+            <p class="px-2 pb-1 pt-5 text-center text-xs leading-6 text-muted">Curious by nature. Engineering-minded by choice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="border-y border-white/5 bg-[#131d1b] py-20 sm:py-24">
+      <div class="container-width grid gap-10 md:grid-cols-[.7fr_1.3fr] md:gap-20">
+        <div class="reveal">
+          <p class="eyebrow mb-4">A little about me</p>
+          <h2 class="section-heading">Engineering with<br><span class="gradient-text">purpose.</span></h2>
+        </div>
+        <div class="reveal">
+          <p class="text-lg leading-8 text-[#d5ded8]">
+            I'm a Bengaluru-based engineer interested in the intersection of software engineering and artificial intelligence. At Epsilon, I work on enterprise initiatives spanning AI-assisted workflows, backend utilities and test automation.
+          </p>
+          <p class="mt-5 leading-8 text-muted">
+            My experience ranges from building Python services and integrating cloud AI capabilities to developing Java automation systems and data pipelines. I value clean implementation, measurable outcomes and tools that solve real operational problems.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-2">
+            <span class="tag">Backend engineering</span><span class="tag">Generative AI</span><span class="tag">Agentic workflows</span><span class="tag">Cloud services</span><span class="tag">Quality engineering</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-20 sm:py-24">
+      <div class="container-width">
+        <div class="reveal mb-12">
+          <p class="eyebrow mb-4">Where I've worked</p>
+          <h2 class="section-heading">Professional <span class="gradient-text">experience</span></h2>
+        </div>
+        <div class="timeline-line ml-2 space-y-10 pl-8 sm:ml-4 sm:pl-10">
+          <article class="reveal relative">
+            <span class="timeline-dot"></span>
+            <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+              <div>
+                <h3 class="font-display text-xl font-bold">Associate Engineer</h3>
+                <a class="mt-1 inline-block text-sm font-semibold text-[#d99a8d] hover:underline" href="https://www.epsilon.com" target="_blank" rel="noopener noreferrer">Epsilon ↗</a>
+              </div>
+              <span class="text-sm text-muted">Aug 2025 – Present · Bengaluru</span>
+            </div>
+            <ul class="mt-5 max-w-3xl list-disc space-y-3 pl-5 leading-7 text-muted marker:text-[#d99a8d]">
+              <li>Developed an enterprise GenAI test-scenario generation workflow using Python, React, n8n and Amazon Bedrock, with human-in-the-loop review.</li>
+              <li>Built reusable Python components for internal API workflows, including metadata-driven execution and enterprise integrations.</li>
+              <li>Created API orchestration utilities integrating n8n and ReadyAPI to support dynamic runtime assertions and reduce manual validation effort.</li>
+              <li>Worked on Java Selenium automation suites, using AI-assisted analysis and refactoring to improve locator strategy and reduce maintenance effort.</li>
+              <li>Contributed to workflows integrating FastAPI, AWS S3, VSTS/JIRA and cloud-based AI services.</li>
+            </ul>
+          </article>
+
+          <article class="reveal relative">
+            <span class="timeline-dot"></span>
+            <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+              <div>
+                <h3 class="font-display text-xl font-bold">Engineering Intern</h3>
+                <a class="mt-1 inline-block text-sm font-semibold text-[#d99a8d] hover:underline" href="https://www.epsilon.com" target="_blank" rel="noopener noreferrer">Epsilon ↗</a>
+              </div>
+              <span class="text-sm text-muted">Feb 2025 – Aug 2025 · Bengaluru</span>
+            </div>
+            <ul class="mt-5 max-w-3xl list-disc space-y-3 pl-5 leading-7 text-muted marker:text-[#d99a8d]">
+              <li>Designed a Python batch-processing framework handling approximately 1,000 records per run.</li>
+              <li>Built a GenAI-assisted test-generation application using LangChain and Amazon Bedrock to turn requirement documents into validation scenarios.</li>
+              <li>Automated data and API validation using Python, Oracle SQL, REST APIs, Excel and SFTP.</li>
+            </ul>
+          </article>
+
+          <article class="reveal relative">
+            <span class="timeline-dot"></span>
+            <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+              <div><h3 class="font-display text-xl font-bold">Android Developer Intern <span class="text-sm font-medium text-muted">(Part-time)</span></h3><p class="mt-1 text-sm font-semibold text-[#d99a8d]">Healthmudraa</p></div>
+              <span class="text-sm text-muted">Dec 2024 – Jan 2025 · Bengaluru</span>
+            </div>
+            <ul class="mt-5 max-w-3xl list-disc space-y-3 pl-5 leading-7 text-muted marker:text-[#d99a8d]">
+              <li>Implemented Android UI components in Java and integrated multimedia functionality in line with application UI requirements.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="border-y border-white/5 bg-[#131d1b] py-20 sm:py-24">
+      <div class="container-width">
+        <div class="reveal mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div><p class="eyebrow mb-4">Selected work</p><h2 class="section-heading">Projects that <span class="gradient-text">I've built</span></h2></div>
+          <a href="https://github.com/sidddot" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[#d99a8d] hover:underline">Explore all repositories ↗</a>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <article class="project-card surface reveal rounded-2xl p-6 sm:p-7">
+            <div class="mb-5 flex items-center justify-between"><span class="eyebrow">AI · Multi-agent systems</span><span class="text-2xl text-[#d99a8d]" aria-hidden="true">✳</span></div>
+            <h3 class="font-display text-xl font-bold">Flora-Ops</h3>
+            <p class="mt-3 leading-7 text-muted">An agentic productivity framework for intelligent urban gardening, coordinating agents to support plant-care decisions and weather-aware workflows.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">Google ADK</span><span class="tag">A2A</span><span class="tag">Cloud Run</span><span class="tag">Firestore</span></div>
+            <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-cream hover:text-[#d99a8d]" href="https://github.com/sidddot/flora-ops" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card surface reveal rounded-2xl p-6 sm:p-7">
+            <div class="mb-5 flex items-center justify-between"><span class="eyebrow">Java · Distributed systems</span><span class="text-2xl text-[#d99a8d]" aria-hidden="true">⌁</span></div>
+            <h3 class="font-display text-xl font-bold">Reliable Event Delivery Platform</h3>
+            <p class="mt-3 leading-7 text-muted">A reliable event-delivery and observability project exploring delivery guarantees alongside metrics, logs and distributed tracing.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag">Java</span><span class="tag">Event delivery</span><span class="tag">Observability</span></div>
+            <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-cream hover:text-[#d99a8d]" href="https://github.com/sidddot/Reliable-Event-Delivery-Platform-Observability" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card surface reveal rounded-2xl p-6 sm:p-7">
+            <div class="mb-5 flex items-center justify-between"><span class="eyebrow">Data engineering · Cloud</span><span class="text-2xl text-[#d99a8d]" aria-hidden="true">▥</span></div>
+            <h3 class="font-display text-xl font-bold">OpenSky Flight Tracking Pipeline</h3>
+            <p class="mt-3 leading-7 text-muted">An end-to-end pipeline ingesting flight data from the OpenSky API into AWS S3 and Databricks, using PySpark and a Bronze/Silver/Gold data architecture.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">PySpark</span><span class="tag">Databricks</span><span class="tag">Delta Lake</span></div>
+            <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-cream hover:text-[#d99a8d]" href="https://github.com/sidddot/opensky-flight-tracking-pipeline" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card surface reveal rounded-2xl p-6 sm:p-7">
+            <div class="mb-5 flex items-center justify-between"><span class="eyebrow">Test automation · Reliability</span><span class="text-2xl text-[#d99a8d]" aria-hidden="true">⌘</span></div>
+            <h3 class="font-display text-xl font-bold">Self-Healing Test Framework</h3>
+            <p class="mt-3 leading-7 text-muted">A test-automation project focused on improving resilience when application interfaces and element locators change.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag">Automation</span><span class="tag">Selenium</span><span class="tag">Test reliability</span></div>
+            <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-cream hover:text-[#d99a8d]" href="https://github.com/sidddot/self-healing-test-framework" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+          </article>
+
+        </div>
+
+        <p class="mt-6 text-xs leading-6 text-muted">Professional work involving internal enterprise platforms is described at a high level; proprietary implementation details are not published here.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 sm:py-24">
+      <div class="container-width">
+        <div class="reveal mb-12"><p class="eyebrow mb-4">My toolkit</p><h2 class="section-heading">Technologies I <span class="gradient-text">work with</span></h2></div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="surface reveal rounded-2xl p-6"><p class="mb-4 text-xs font-bold uppercase tracking-[.16em] text-[#d99a8d]">Languages</p><h3 class="font-display text-lg font-bold">Programming</h3><p class="mt-3 leading-7 text-muted">Java · Python · SQL · JavaScript</p></div>
+          <div class="surface reveal rounded-2xl p-6"><p class="mb-4 text-xs font-bold uppercase tracking-[.16em] text-[#d99a8d]">Backend</p><h3 class="font-display text-lg font-bold">Application development</h3><p class="mt-3 leading-7 text-muted">Spring Boot · FastAPI · REST APIs</p></div>
+          <div class="surface reveal rounded-2xl p-6"><p class="mb-4 text-xs font-bold uppercase tracking-[.16em] text-[#d99a8d]">Artificial intelligence</p><h3 class="font-display text-lg font-bold">AI engineering</h3><p class="mt-3 leading-7 text-muted">Amazon Bedrock · RAG · LangChain · Google ADK · Agentic workflows</p></div>
+          <div class="surface reveal rounded-2xl p-6"><p class="mb-4 text-xs font-bold uppercase tracking-[.16em] text-[#d99a8d]">Frontend & orchestration</p><h3 class="font-display text-lg font-bold">Product workflows</h3><p class="mt-3 leading-7 text-muted">React · Streamlit · n8n</p></div>
+          <div class="surface reveal rounded-2xl p-6"><p class="mb-4 text-xs font-bold uppercase tracking-[.16em] text-[#d99a8d]">Data</p><h3 class="font-display text-lg font-bold">Data engineering</h3><p class="mt-3 leading-7 text-muted">PySpark · Databricks · Delta Lake · ETL</p></div>
+          <div class="surface reveal rounded-2xl p-6"><p class="mb-4 text-xs font-bold uppercase tracking-[.16em] text-[#d99a8d]">Cloud & quality</p><h3 class="font-display text-lg font-bold">Platforms & tools</h3><p class="mt-3 leading-7 text-muted">AWS · GCP · Docker · Git · Selenium · TestNG · ReadyAPI · Postman · JMeter</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education and recognition -->
+    <section id="education" class="border-y border-white/5 bg-[#131d1b] py-20 sm:py-24">
+      <div class="container-width grid gap-12 md:grid-cols-2">
+        <div class="reveal">
+          <p class="eyebrow mb-4">Academic background</p><h2 class="section-heading">Education & <span class="gradient-text">credentials</span></h2>
+          <div class="surface mt-8 rounded-2xl p-6">
+            <p class="text-xs font-bold uppercase tracking-[.15em] text-[#d99a8d]">2021 – 2025</p>
+            <h3 class="mt-3 font-display text-xl font-bold">B.E. Computer Science & Engineering</h3>
+            <p class="mt-2 leading-7 text-muted">BMS Institute of Technology and Management · Bengaluru, India</p>
+            <p class="mt-4 inline-flex rounded-full bg-[#0F3D3A]/60 px-3 py-1.5 text-sm font-bold text-[#c6dfd0]">CGPA 9.38 / 10</p>
+          </div>
+          <div class="mt-7">
+            <h3 class="font-display text-lg font-bold">Certifications</h3>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-muted">
+              <li class="flex gap-3"><span class="text-[#d99a8d]">↗</span><a class="hover:text-cream hover:underline" href="https://www.credly.com/badges/0fee80de-ea98-4b9e-873d-221625fe089a/public_url?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Certified AI Practitioner · July 2026</a></li>
+              <li class="flex gap-3"><span class="text-[#d99a8d]">↗</span><a class="hover:text-cream hover:underline" href="https://www.credly.com/badges/9cdf175d-b5f7-4be8-a590-c120b1561e13/public_url?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Agentic AI Demonstrated · Sep 2026</a></li>
+              <li class="flex gap-3"><span class="text-[#d99a8d]">↗</span><a class="hover:text-cream hover:underline" href="https://drive.google.com/file/d/1GTkHGFmdNQT8ceeroud3NJ2ujI2PT4u5/view?usp=sharing" target="_blank" rel="noopener noreferrer">Google Cloud Computing Fundamentals certificate</a></li>
+              <li class="flex gap-3"><span class="text-[#d99a8d]">↗</span><a class="hover:text-cream hover:underline" href="https://cert.diceid.com/cid/KEODPe30MJ" target="_blank" rel="noopener noreferrer">Wipro Java Certification</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="eyebrow mb-4">Milestones</p><h2 class="section-heading">Recognition & <span class="gradient-text">research</span></h2>
+          <div class="mt-8 space-y-4">
+            <div class="surface rounded-2xl p-5"><p class="text-xs font-bold uppercase tracking-[.14em] text-[#d99a8d]">2025 · Competition</p><h3 class="mt-2 font-display font-bold">1st Place — Test Autothon</h3><p class="mt-2 text-sm leading-6 text-muted">Built a few-shot learning solution to categorize bugs and generate root-cause explanations from historical labelled data.</p></div>
+            <div class="surface rounded-2xl p-5"><p class="text-xs font-bold uppercase tracking-[.14em] text-[#d99a8d]">Professional recognition</p><h3 class="mt-2 font-display font-bold">Rising Star — Epsilon</h3><p class="mt-2 text-sm leading-6 text-muted">Recognized for delivering automation tools and contributing to engineering efficiency.</p></div>
+            <div class="surface rounded-2xl p-5"><p class="text-xs font-bold uppercase tracking-[.14em] text-[#d99a8d]">2024 · Academic recognition</p><h3 class="mt-2 font-display font-bold">Dr. S. K. Shivakumar Prize</h3><p class="mt-2 text-sm leading-6 text-muted">Awarded for a Facial Recognition Security System; also runner-up in Project Based Learning for a facial-recognition solution for visually impaired users.</p></div>
+            <div class="surface rounded-2xl p-5"><p class="text-xs font-bold uppercase tracking-[.14em] text-[#d99a8d]">2023 · IEEE ICCCNT</p><h3 class="mt-2 font-display font-bold">Research publication</h3><p class="mt-2 text-sm leading-6 text-muted">“Implementation of Euler Circuit and Trail in Delivery and Logistics” — applying graph theory to delivery and logistics route problems.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="hero-grid relative overflow-hidden py-20 sm:py-24">
+      <div class="container-width relative text-center">
+        <div class="reveal mx-auto max-w-2xl">
+          <p class="eyebrow mb-4">Have an interesting problem?</p>
+          <h2 class="section-heading">Let's build something <span class="gradient-text">meaningful.</span></h2>
+          <p class="mt-5 leading-8 text-muted">I'm always interested in connecting with people working on software, AI and engineering-led products.</p>
+          <a href="mailto:sidharthnarayan04@gmail.com" class="btn-primary mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold">Get in touch <span aria-hidden="true">↗</span></a>
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted">
+            <a class="hover:text-cream" href="mailto:sidharthnarayan04@gmail.com">sidharthnarayan04@gmail.com</a>
+            <a class="hover:text-cream" href="https://github.com/sidddot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="hover:text-cream" href="https://www.linkedin.com/in/sidharth-n" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 bg-[#0c1211] py-6">
+    <div class="container-width flex flex-col items-center justify-between gap-3 text-center text-xs text-muted sm:flex-row sm:text-left">
+      <p>© <span id="year"></span> Sidharth N. Built with care.</p>
+      <a href="#home" class="hover:text-cream">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById('menuButton');
+    const mobileLinks = document.getElementById('mobileLinks');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      mobileLinks.hidden = isExpanded;
+    });
+
+    mobileLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileLinks.hidden = true;
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Reveal content as it enters the viewport; content remains visible without JS.
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('visible'));
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
